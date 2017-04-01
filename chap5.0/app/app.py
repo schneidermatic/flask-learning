@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, g
 from flask.ext.migrate import Migrate, MigrateCommand
 from flask.ext.script import Manager
 from flask_sqlalchemy import SQLAlchemy
