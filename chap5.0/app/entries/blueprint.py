@@ -82,8 +82,7 @@ def create():
             for tag in entry.tags:
                 app.logger.info("***> " + str(tag.id) + "|" + str(tag.name))
             db.session.add(entry)
-            db.session.commit
-            db.session.flush
+            db.session.commit()
             flash('Entry "%s" created successfully.' % entry.title, 'success')
             return redirect(url_for('entries.detail', slug=entry.slug))
     else:
