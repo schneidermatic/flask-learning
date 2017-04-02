@@ -30,8 +30,11 @@
                   <li><a href="{{ url_for('entries.index') }}">Blog</a></li>
                   <li><a href="{{ url_for('entries.create') }}">Create</a></li>
                   <li><a href="{{ url_for('entries.image_upload') }}">Upload</a></li>
-                  <li><a href="{{ url_for('login', next=request.path) }}">Login</a></li>
-                  <li><a href="{{ url_for('logout', next=request.path) }}">Logout</a></li>
+                  {% if g.user.is_authenticated %}
+                    <li><a href="{{ url_for('logout', next=request.path) }}">Logout</a></li>
+                  {% else %}
+                    <li><a href="{{ url_for('login', next=request.path) }}">Login</a></li>
+                  {% endif %}
                   {% block extra_nav %}{% endblock %}
                </ul>
            </div>
