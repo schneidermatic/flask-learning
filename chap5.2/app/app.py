@@ -26,11 +26,4 @@ login_manager.login_view = "login"
 def _before_request():
     g.user = current_user
 
-@app._before_request
-def _last_page_visited():
-    if "current_page" in session:
-        session["last_page"] = session["current_page"]
-    session["current_page"] = request.path
-
-
 bcrypt = Bcrypt(app)

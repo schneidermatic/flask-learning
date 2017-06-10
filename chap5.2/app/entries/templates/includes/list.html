@@ -1,8 +1,4 @@
 
-<br>
-session: {{ session["current_page"] }}
-<br>
-
 {% for entry in object_list.items %}
    <p>
       <a href="{{ url_for('entries.detail', slug=entry.slug) }}">
