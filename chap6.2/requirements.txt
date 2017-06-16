@@ -1,0 +1,10 @@
+flask
+sqlalchemy
+flask-sqlalchemy
+psycopg2
+ipython
+wtforms>=2.0
+flask-migrate
+flask-login
+flask-bcrypt
+flask-admin
